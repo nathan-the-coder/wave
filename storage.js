@@ -56,9 +56,7 @@ class CustomStartStorage extends CustomStartStorageLocal {
   }
 
   async getDefault() {
-    const fetchDataUrl = // Should match `customstart.page` or `customstart.local`.
-    location.hostname.match('.customstart.') ? "/api/data" : "manifest/defaultData.json";
-    return await fetch(fetchDataUrl).then(res => res.json()).then(out => {
+    return await fetch('manifest/default-data.json').then(res => res.json()).then(out => {
       return out;
     }).catch(err => {
       throw err;

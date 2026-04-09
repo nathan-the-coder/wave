@@ -12,8 +12,8 @@
 }
 
 body {
-	background-color: #252934;
-	color: white;
+	background-color: #1a1b26;
+	color: #c0caf5;
 }
 
 /* ------------- TRANSITIONS AND SHADOWS ------------- */
@@ -27,9 +27,9 @@ a, a:visited, a:hover, .box .box-container:hover, .box .box-container {
 }
 
 .box .box-container:hover {
-	-webkit-box-shadow: 4px 4px 15px -5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 4px 4px 15px -5px rgba(0,0,0,0.75);
-	box-shadow: 4px 4px 15px -5px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 4px 4px 15px -5px rgba(122, 162, 247, 0.3);
+	-moz-box-shadow: 4px 4px 15px -5px rgba(122, 162, 247, 0.3);
+	box-shadow: 4px 4px 15px -5px rgba(122, 162, 247, 0.3);
 }
 
 .container form, .box .box-container {
@@ -52,11 +52,11 @@ a, a:visited, a:hover, .box .box-container:hover, .box .box-container {
 /* ------------- LINK STYLING ------------- */
 
 a, a:visited {
-	color: #6C7789;
+	color: #565f89;
 }
 
 a:hover {
-	color: white;
+	color: #7aa2f7;
 }
 
 a, a:visited, a:hover {
@@ -72,12 +72,29 @@ a, a:visited, a:hover {
 	text-align: left;
 }
 
-/* ------------- TIME STYLING ------------- */
+/* ------------- TIME & GREETING STYLING ------------- */
+
+.container .greeting {
+	font-family: 'test';
+	font-size: 24px;
+	color: #bb9af7;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.container .date {
+	font-family: 'test';
+	font-size: 18px;
+	color: #565f89;
+	margin-bottom: 20px;
+}
 
 .container .time {
 	font-family: 'test';
 	font-size: 120px;
 	margin-bottom: 20px;
+	color: #7aa2f7;
 }
 
 /* ------------- BOX STYLING ------------- */
@@ -89,10 +106,11 @@ a, a:visited, a:hover {
 }
 
 .box .box-container {
-	background-color: #2E3441;
+	background-color: #24283b;
 	width: 200px;
 	padding:25px 10px;
 	border-radius: 5px;
+	border: 1px solid #414868;
 }
 
 .box .box-container:not(:last-child) {
@@ -104,15 +122,17 @@ a, a:visited, a:hover {
 	font-family: 'test';
 	font-size: 33px;
 	text-align: left;
+	color: #ff9e64;
 }
 
 /* ------------- SEARCH STYLING ------------- */
 
 .container form {
-	background-color: #2E3441;
+	background-color: #24283b;
 	border-radius: 5px;
 	width: 450px;
 	margin-bottom: 80px;
+	border: 1px solid #414868;
 }
 
 .container form .search-field, .container form .search-submit {
@@ -126,7 +146,7 @@ a, a:visited, a:hover {
 .container form .search-field {
 	width: 89%;
 	padding-left: 15px;
-	color: white;
+	color: #c0caf5;
 	font-size: 30px;
 	font-family: 'test';
 	bottom: -1px;
@@ -212,6 +232,42 @@ a, a:visited, a:hover {
 	}
 }
 
+/* ------------- QUOTE UNIQUE FEATURE ------------- */
+
+.quote-container {
+	position: fixed;
+	top: 30px;
+	right: 30px;
+	max-width: 250px;
+	padding: 15px;
+	background-color: #24283b;
+	border-radius: 5px;
+	border: 1px solid #414868;
+	font-family: 'test';
+	text-align: left;
+	z-index: 1001;
+	opacity: 0;
+	animation: fadeIn 2s ease-out forwards;
+}
+
+.quote-text {
+	color: #7dcfff;
+	font-size: 14px;
+	line-height: 1.4;
+	margin-bottom: 8px;
+}
+
+.quote-author {
+	color: #565f89;
+	font-size: 12px;
+	text-align: right;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(-10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
 /* ------------- MEDIA QUERY ------------- */
 
 @media only screen and (max-width: 985px) {
@@ -223,5 +279,10 @@ a, a:visited, a:hover {
 	}
 	.box {
 		width: 450px;
+	}
+	.quote-container {
+		position: static;
+		margin-bottom: 20px;
+		max-width: 400px;
 	}
 }
